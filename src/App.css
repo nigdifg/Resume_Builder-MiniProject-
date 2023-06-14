@@ -24,15 +24,83 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.resume-builder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.resume-builder-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.resume-builder-button {
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 4px 8px;
+  background-color: hwb(271 33% 12%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.resume-builder-button:hover {
+  background-color: #0056b3;
+}
+
+.resume-builder-container {
+  padding: 5px;
+}
+
+.resume-builder-title {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.resume-builder-button {
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .resume-builder-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .resume-builder-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
+}
+
+@media (max-width: 480px) {
+  .resume-builder-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .resume-builder-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+.resume-builder-title {
+  font-size: 45px;
+}
+
+.resume-builder-button {
+  font-size: 35px;
+  padding: 10px;
+}
+
+/* Increase icon size */
+.resume-builder-container svg {
+  width: 80px;
+  height: 30px;
 }
