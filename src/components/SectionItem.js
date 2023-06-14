@@ -10,7 +10,7 @@ import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { green, red } from '@mui/material/colors';
 import { makeStyles } from '@material-ui/core/styles';
-
+import './../App.css';
 const useStyles = makeStyles((theme) => ({
   sectionItemContainer: {
     '& > *': {
