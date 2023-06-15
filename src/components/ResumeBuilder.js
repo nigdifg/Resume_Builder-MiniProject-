@@ -7,6 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import '../App.css';
 const useStyles = makeStyles((theme) => ({
   resumeBuilderContainer: {
@@ -66,6 +69,8 @@ const ResumeBuilder = () => {
       return section;
     });
     setSections(updatedSections);
+    toast.success('Changes saved!', { autoClose: 2000 });
+
   };
 
   const handleSectionToggle = (sectionId) => {
@@ -79,8 +84,12 @@ const ResumeBuilder = () => {
   };
 
   const handleSave = () => {
-    // Logic to save the changes
     console.log('Changes saved!');
+      toast.info('Saving details...', { autoClose: false });
+
+      setTimeout(() => {
+        toast.success('Details saved!', { autoClose: 3000 });
+      }, 2000);
   };
 
   return (
@@ -107,6 +116,8 @@ const ResumeBuilder = () => {
       >
         Save and next
       </Button>
+      <ToastContainer position="bottom-right" />
+
     </div>
    
   );
