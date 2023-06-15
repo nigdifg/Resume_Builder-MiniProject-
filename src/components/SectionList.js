@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 const SectionList = ({ sections, onSectionReorder, onSectionNameChange, onSectionToggle }) => {
   return (
     <Box display="flex" justifyContent="center">
-      <ul>
+      <ul style={{ padding: 2, listStyle: 'none' }}>
         {sections.map((section, index) => (
           <SectionItem
             key={section.id}

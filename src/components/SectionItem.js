@@ -19,12 +19,11 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionNameContainer: {
     display: 'flex',
-    textAlign:'left',
     alignItems: 'center',
   
   },
   sectionName: {
-    flex: '1',
+    flexGrow: 1,
   
   },
 }));

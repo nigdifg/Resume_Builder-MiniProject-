@@ -5,27 +5,33 @@ import SectionList from './SectionList';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import './../App.css';
+import Grid from '@material-ui/core/Grid';
+
+import '../App.css';
 const useStyles = makeStyles((theme) => ({
   resumeBuilderContainer: {
     textAlign: 'center',
-    padding: theme.spacing(3),
-    width: '600px', // Adjust the width as needed
+    padding: theme.spacing(2),
+    width: '80%', // Adjust the width as needed
+    maxWidth: '600px',
     margin: '0 auto', // Center the container horizontally
   },
   resumeBuilderTitle: {
     marginBottom: theme.spacing(1),
     color: theme.palette.primary.main,
-    fontSize: '1.9rem',
+    fontSize: '1.5rem',
     fontWeight: 'bold',
   },
   resumeBuilderButton: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
     background: theme.palette.primary.main,
     color: '#fff',
     '&:hover': {
       background: theme.palette.primary.dark,
     },
+  },
+  sectionListContainer: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -82,12 +88,16 @@ const ResumeBuilder = () => {
       <Typography variant="h1" className={classes.resumeBuilderTitle}>
         Select your sections
       </Typography>
-      <SectionList
-        sections={sections}
-        onSectionReorder={handleSectionReorder}
-        onSectionNameChange={handleSectionNameChange}
-        onSectionToggle={handleSectionToggle}
-      />
+      <Grid container spacing={2} className={classes.sectionListContainer}>
+        <Grid item xs={12} sm={12} md={12}>
+          <SectionList
+            sections={sections}
+            onSectionReorder={handleSectionReorder}
+            onSectionNameChange={handleSectionNameChange}
+            onSectionToggle={handleSectionToggle}
+          />
+        </Grid>
+      </Grid>
       <Button
         variant="contained"
         color="primary"
@@ -98,6 +108,7 @@ const ResumeBuilder = () => {
         Save and next
       </Button>
     </div>
+   
   );
 };
 

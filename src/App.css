@@ -47,12 +47,9 @@
   border-radius: 5px;
 }
 
-.resume-builder-button:hover {
-  background-color: #0056b3;
-}
 
 .resume-builder-container {
-  padding: 5px;
+  padding: 8px;
 }
 
 .resume-builder-title {
@@ -103,4 +100,28 @@
 .resume-builder-container svg {
   width: 80px;
   height: 30px;
+}
+/* Small screens */
+@media (max-width: 600px) {
+  .resumeBuilderContainer {
+    width: 100%;
+    padding: 10px;
+  
+  }
+}
+
+/* Medium screens */
+@media (min-width: 601px) and (max-width: 960px) {
+  .resumeBuilderContainer {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 961px) {
+  .resumeBuilderContainer {
+    width: 600px;
+    padding: 48px;
+  }
 }
