@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import '../App.css';
+// import '../App.css';
 const useStyles = makeStyles((theme) => ({
   resumeBuilderContainer: {
     textAlign: 'center',
@@ -53,12 +53,16 @@ const ResumeBuilder = () => {
     { id: 9, name: 'Education', order: 9, enabled: true, description: 'Education section' },
   ]);
 
+  const [isModified, setIsModified] = useState(false);
+
   const handleSectionReorder = (dragIndex, hoverIndex) => {
     const reorderedSections = [...sections];
     const draggedSection = reorderedSections[dragIndex];
     reorderedSections.splice(dragIndex, 1);
     reorderedSections.splice(hoverIndex, 0, draggedSection);
     setSections(reorderedSections);
+    setIsModified(true);
+
   };
 
   const handleSectionNameChange = (sectionId, newName) => {
@@ -69,6 +73,8 @@ const ResumeBuilder = () => {
       return section;
     });
     setSections(updatedSections);
+    setIsModified(true);
+
     toast.success('Changes saved!', { autoClose: 2000 });
 
   };
@@ -80,12 +86,17 @@ const ResumeBuilder = () => {
       }
       return section;
     });
+    
     setSections(updatedSections);
+    setIsModified(true);
+
   };
 
   const handleSave = () => {
     console.log('Changes saved!');
-      toast.info('Saving details...', { autoClose: false });
+    setIsModified(false);
+  
+    toast.info('Saving details...', { autoClose: 2599 });
 
       setTimeout(() => {
         toast.success('Details saved!', { autoClose: 3000 });
@@ -111,7 +122,7 @@ const ResumeBuilder = () => {
         variant="contained"
         color="primary"
         className={classes.resumeBuilderButton}
-        disabled={false}
+        disabled={!isModified}
         onClick={handleSave}
       >
         Save and next
