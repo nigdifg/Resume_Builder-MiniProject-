@@ -88,7 +88,7 @@ const ResumeBuilder = () => {
       <Typography variant="h1" className={classes.resumeBuilderTitle}>
         Select your sections
       </Typography>
-      <Grid container spacing={2} className={classes.sectionListContainer}>
+      <Grid container spacing={0} className={classes.sectionListContainer}>
         <Grid item xs={12} sm={12} md={12}>
           <SectionList
             sections={sections}
